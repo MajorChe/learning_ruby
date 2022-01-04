@@ -1,5 +1,4 @@
 class Student
-  attr_accessor :name
   def initialize(name,grade)
     @name = name
     @grade = grade
@@ -18,7 +17,6 @@ end
 
 che = Student.new("Che",98)
 maze = Student.new("Maze",88)
-p che.name
 puts che.better_grade_than(maze) ? "well done!" : "Need to imporve"
 
 
