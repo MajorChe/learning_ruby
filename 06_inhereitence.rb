@@ -49,13 +49,23 @@ class Vehicle
     @mileage = kms/liters
     puts "Mileage is #{@mileage}"
   end
+
+  def age
+    puts "Your #{self.model} is #{years_old} years old"
+  end
+
+  private 
+
+  def years_old
+    Time.now.year - self.year
+  end
 end
 
 class MyCar < Vehicle
   NUMBER_OF_DOORS = 4
   include Ev
   def to_s
-    puts "My car is #{@year} #{@model}"
+    puts "My car is #{@year} #{@model} and #{color} color"
   end
 end
 
@@ -70,7 +80,26 @@ end
 car1 = MyCar.new(2018,"Range Rover Sport","White")
 truck1 = MyTruck.new(2020,"Ford F150","Black")
 
-puts car1
-puts "My car is hybrid capable: #{car1.hybrid}"
-puts truck1
-puts Vehicle.number_of_vehicles
+# puts car1
+# puts "My car is hybrid capable: #{car1.hybrid}"
+# puts truck1
+# puts Vehicle.number_of_vehicles
+
+# check module look up 
+
+# puts MyCar.ancestors
+# puts "###################"
+# puts MyTruck.ancestors
+# puts "###################"
+# puts Vehicle.ancestors
+
+# puts car1.to_s
+# car1.speedUp(20)
+# car1.speed
+# car1.brake(20)
+# car1.speed
+# car1.shutdown
+# car1.spray_paint("red")
+# puts car1.to_s
+
+truck1.age
